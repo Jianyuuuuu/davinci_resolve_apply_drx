@@ -151,17 +151,18 @@ if not project:
     project = projectManager.CreateProject(projectName)
     print(f'未能找到名为"{projectName}"的项目，已创建新项目')
 
+# 设定项目帧率、 分辨率
 project.SetSetting("timelineFrameRate", str(framerate))
 project.SetSetting("timelineResolutionWidth", str(width))
 project.SetSetting("timelineResolutionHeight", str(height))
 
-# 将文件夹内容添加到媒体池
+# 步骤3:将文件夹内容添加到媒体池
 mediapool = project.GetMediaPool()
 rootFolder = mediapool.GetRootFolder()
 mediapool.AddSubFolder(rootFolder, timelineName)
 clips = mediapool.ImportMedia(mediaFiles)
 
-# 创建时间线
+# 步骤4:创建时间线
 
 timeline = mediapool.CreateEmptyTimeline(timelineName)
 if not timeline:
@@ -172,13 +173,8 @@ if not timeline:
 # 按名称排序
 clips = sorted(clips, key=lambda clip: clip.GetClipProperty("File Name"))
 
-# 将剪辑附加到时间线，排除掉jpg和png文件
-
 # 定义需要排除的文件扩展名列表
-
-
 for clip in clips:
-
     mediapool.AppendToTimeline(clip)
 
 # 把drx文件应用到所有时间线
