@@ -5,6 +5,12 @@
 
 ## 使用说明
 
+### 下载脚本
+
+方法1： 在github页面 - Code - 下载ZIP，然后解压到本地。
+
+方法2: 在本地git 克隆此项目
+
 ### 前置准备
 
 1. 安装python3 和 pycharm
@@ -45,21 +51,16 @@
 
 #### presetName 预设名称
 
-这是指的是交付界面的渲染预设，名字和软件里面一样。
+这是指的是交付界面的渲染预设，名字和软件里面一样。推荐新建自己的。
 
-可选：
+原版可选：
 1: 'H.264 Master', 2: 'HyperDeck', 3: 'H.265 Master', 4: 'ProRes 422 HQ', 5: 'YouTube - 720p', 6: 'YouTube - 1080p', 7: 'YouTube - 1440p', 8: 'YouTube - 2160p', 9: 'Vimeo - 720p', 10: 'Vimeo - 1080p', 11: 'Vimeo - 2160p', 12: 'Twitter - 720p', 13: 'Twitter - 1080p', 14: 'TikTok - 720p', 15: 'TikTok - 1080p', 16: 'Presentations', 17: 'Dropbox - 720p', 18: 'Dropbox - 1080p', 19: 'Dropbox - 2160p', 20: 'Replay - 720p', 21: 'Replay - 1080p', 22: 'Replay - 2160p', 24: 'IMF - Generic', 25: 'IMF - 20th Century Fox', 26: 'IMF - Netflix', 27: 'IMF - Sony Pictures', 28: 'FCP - Final Cut Pro 7', 29: 'FCP - Final Cut Pro X', 30: 'Premiere XML', 31: 'Audio Only', 32: 'AVID AAF', 33: 'Pro Tools'
 
-#### renderCodec 编码
+# 常见问题
 
+## Windows填写地址注意：
 
+需要在\符号后面多加一个\。
+示例：
+c:\\program\\still.drx
 
-#### renderFormat 封装格式
-
-可以在以下封装格式中选择，选冒号右边小写的值，常见的有“mp4”,"mov".
-
-{'AVI': 'avi', 'BRAW': 'braw', 'Cineon': 'cin', 'DCP': 'dcp',
- 'DPX': 'dpx', 'EXR': 'exr', 'IMF': 'imf', 'JPEG 2000': 'j2c',
-  'MJ2': 'mj2', 'MKV': 'mkv', 'MP4': 'mp4', 'MTS': 'mts',
-  'MXF OP-Atom': 'mxf', 'MXF OP1A': 'mxf_op1a', 'Panasonic AVC': 'pavc',
-   'QuickTime': 'mov', 'TIFF': 'tif', 'Wave': 'wav'}
