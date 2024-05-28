@@ -28,6 +28,7 @@ def GetResolve():
         # The PYTHONPATH needs to be set correctly for this import statement to work.
         # An alternative is to import the DaVinciResolveScript by specifying absolute path (see ExceptionHandler logic)
         import DaVinciResolveScript as bmd
+        print('已经Python 环境变量 $PYTHONPATH中导入DavinciResolveScript模块')
     except ImportError:
         if sys.platform.startswith("darwin"):
             expectedPath = "/Library/Application Support/Blackmagic Design/DaVinci Resolve/Developer/Scripting/Modules/"
@@ -38,14 +39,14 @@ def GetResolve():
             expectedPath = "/opt/resolve/Developer/Scripting/Modules/"
 
         # check if the default path has it...
-        print("Unable to find module DaVinciResolveScript from $PYTHONPATH - trying default locations")
+        print("未能从 Python 环境变量 $PYTHONPATH 中找到DavinciResolveScript模块，正在尝试从本地地址加载.... ")
         try:
             load_source('DaVinciResolveScript', expectedPath + "DaVinciResolveScript.py")
             import DaVinciResolveScript as bmd
         except Exception as ex:
             # No fallbacks ... report error:
             print("Unable to find module DaVinciResolveScript - please ensure that the module DaVinciResolveScript is discoverable by python")
-            print("For a default DaVinci Resolve installation, the module is expected to be located in: " + expectedPath)
+            print("默认DaivniciResolveScript模块地址: " + expectedPath)
             print(ex)
             sys.exit()
 
